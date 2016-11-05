@@ -1,6 +1,6 @@
 #include<stdio.h>
-#define LIST_INIT_SIZE 100 //线性表存储空间的初始分配量
-#define LISTINCREMENT 10//线性表存储空间的分配增量
+#define LIST_INIT_SIZE 100 //顺序表存储空间的初始分配量
+#define LISTINCREMENT 10//顺序表存储空间的分配增量
 #define ElemType int
 #include<stdlib.h>
 #define OK 1
@@ -10,8 +10,8 @@ typedef struct{
                                         ElemType *elem;//存储空间基址
                                         int length ;//当前长度
                                         int listsize;//当前分配的存储容量
-                            }SqList;//线性表定义
-int InitList_Sq(SqList &L)//构造一个空的线性表L
+                            }SqList;//顺序表定义
+int InitList_Sq(SqList &L)//构造一个空的顺序表L
 {
             L.elem = (ElemType *)malloc(LIST_INIT_SIZE * sizeof(ElemType));//初试分配100个int 字长
             if(! L.elem)
@@ -100,7 +100,7 @@ void List_Rerserve(SqList &L)
 int  main()
 {
             SqList a;
-            InitList_Sq(a);//线性表初始化操作
+            InitList_Sq(a);//顺序表初始化操作
             for (int i = 1 ; i <= 5 ; i++ )
             {
                     ListAdd_Sq(a,i, i);
